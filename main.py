@@ -314,7 +314,8 @@ async def txt_handler(bot: Client, m: Message):
                 #url = f"https://www.masterapi.tech/get/cp/dl?url={url}"
 
             elif 'media-cdn.classplusapp.com/drm/' in url:
-                url = f"https://dragoapi.vercel.app/video/{url}"
+                #url = f"https://dragoapi.vercel.app/video/{url}"
+                url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': 'eyJhbGciOiJIUzM4NCIsInR5cCI6IkpXVCJ9.eyJpZCI6OTQ1OTc0NjEsIm9yZ0lkIjo1NzMyMTIsInR5cGUiOjEsIm1vYmlsZSI6IjkxNzIwMzkwMjg3MSIsIm5hbWUiOiJEb2RpeWEgVmlzaHZyYWoiLCJlbWFpbCI6InZpc2h2cmFqc2luaGRvZGl5YTE5MTBAZ21haWwuY29tIiwiaXNJbnRlcm5hdGlvbmFsIjowLCJkZWZhdWx0TGFuZ3VhZ2UiOiJFTiIsImNvdW50cnlDb2RlIjoiSU4iLCJjb3VudHJ5SVNPIjoiOTEiLCJ0aW1lem9uZSI6IkdNVCs1OjMwIiwiaXNEaXkiOnRydWUsIm9yZ0NvZGUiOiJvZ2JzcWoiLCJpc0RpeVN1YmFkbWluIjowLCJmaW5nZXJwcmludElkIjoiNTMzYjUwNWIzZWYzYzlmODkwOGUwOTY1NjgwNWNlYzAiLCJpYXQiOjE3NTAxNDYxOTEsImV4cCI6MTc1MDc1MDk5MX0.YiUNm9X_u0-h1NfES_BDLHzycwGyUsSsP5-Ozt14i28_CV9m1IoqaDp4_mqxuGGl'}).json()['url']
 
             
             elif 'videos.classplusapp' in url or "tencdn.classplusapp" in url or "webvideos.classplusapp.com" in url or "media-cdn-alisg.classplusapp.com" in url or "videos.classplusapp" in url or "videos.classplusapp.com" in url or "media-cdn-a.classplusapp" in url or "media-cdn.classplusapp" in url or "alisg-cdn-a.classplusapp" in url:
